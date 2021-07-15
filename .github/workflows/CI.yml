@@ -24,3 +24,11 @@ jobs:
         pip install -r requirements.txt
     - name: Runs tests
       run: pytest
+    - name: Create coverage report
+      run: |
+        pytest --cov=./
+    - name: "Upload coverage to Codecov"
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        fail_ci_if_error: true

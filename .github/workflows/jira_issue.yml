@@ -3,6 +3,8 @@ name: Create Jira Issue
 on:
   issues:
     types: [opened]
+  
+  workflow_dispatch:
 
 jobs:
   UpdateJira:
@@ -11,10 +13,31 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Run a multi-line script
+      - name: Exibe titulo e body
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo Titulo: ${{ github.event.issue.title }}
+          echo body: ${{ github.event.issue.body }}
+      
+      - name: Jira Login
+        uses: atlassian/gajira-login@v2.0.0
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+      
+      
+      - name: Criar issue no Jira
+        id: create
+        uses: atlassian/gajira-create@master
+        with:
+          project: ${{ secrets.JIRA_PROJECT_KEY }}
+          issuetype: ${{ secrets.JIRA_ISSUE_TYPE }}
+          summary: ${{ github.event.issue.title }}
+          description: ${{ github.event.issue.body }}
+
+
+
+      - name: Log created issue
+        run: echo "Issue ${{ steps.create.outputs.issue }} was created"
+
+

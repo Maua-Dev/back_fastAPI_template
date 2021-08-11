@@ -3,8 +3,6 @@ name: Create Jira Issue
 on:
   issues:
     types: [opened]
-  
-  workflow_dispatch:
 
 jobs:
   UpdateJira:

@@ -22,3 +22,5 @@ This is a template to create Fast API based repositories.
 
 ### Run tests
     pytest
+
+.

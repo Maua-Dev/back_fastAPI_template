@@ -6,9 +6,10 @@ from src.controladores.fastapi.http.respostas import *
 from src.init import Init
 
 
-if __name__ == '__main__':
-    (_, ctrl) = Init()()
+(_, ctrl) = Init()()
 
+
+if __name__ == '__main__':
 
     @ctrl.app.get('/', response_model=ResRoot)
     async def root():

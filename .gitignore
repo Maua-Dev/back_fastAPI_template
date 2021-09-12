@@ -4,4 +4,4 @@ venv/
 .vscode/
 **/__pycache__/
 *.pyc
-/src/config/segredos/
+**/segredos/

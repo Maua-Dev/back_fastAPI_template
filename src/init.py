@@ -2,7 +2,7 @@ from src.config.proj_config import ProjConfig
 from src.config.erros.deployment import *
 from src.config.enums.deployment import *
 from src.repositorios.mock.r_mock import RepoMock
-from src.fabricas.controlador.fastapi.fabrica_controlador_fastapi import FabricaControladorFastapi
+from src.fabricas.controladores.fastapi.fabrica_controlador_fastapi import FabricaControladorFastapi
 
 
 class Init:

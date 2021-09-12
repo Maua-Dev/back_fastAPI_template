@@ -1,5 +1,6 @@
-fastapi==0.67.0
-uvicorn==0.14.0
-pytest==6.2.4
+fastapi
+uvicorn
+pydantic
+pytest
 pytest-cov
 requests

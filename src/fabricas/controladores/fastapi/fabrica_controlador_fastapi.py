@@ -34,7 +34,7 @@ class FabricaControladorFastapi:
         self.app = FastAPI()
 
     def metodoControlador1(self) -> object:
-        return CFastapi1(self.repo).metodoControlador1()
+        return CFastapi1(self.repo)()
 
     def metodoControlador2(self, arg: object) -> object:
-        return CFastapi2(self.repo).metodoControlador2(arg)
+        return CFastapi2(self.repo)(arg)

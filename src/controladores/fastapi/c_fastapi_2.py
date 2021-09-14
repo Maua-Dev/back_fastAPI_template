@@ -9,7 +9,7 @@ class CFastapi2:
     def __init__(self, repo: IRepo):
         self.repo = repo
 
-    def metodoControlador2(self, arg):
+    def __call__(self, arg):
         usecase = UC2(self.repo)
         return ResArg(
             arg=arg,

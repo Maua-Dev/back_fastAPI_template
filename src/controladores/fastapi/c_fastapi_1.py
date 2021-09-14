@@ -9,6 +9,6 @@ class CFastapi1:
     def __init__(self, repo: IRepo):
         self.repo = repo
 
-    def metodoControlador1(self):
+    def __call__(self):
         usecase = UC1(self.repo)
         return ResPadrao(msg=usecase())

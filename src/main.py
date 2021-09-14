@@ -6,12 +6,10 @@ from src.controladores.fastapi.http.respostas import *
 from src.init import Init
 
 
-(_, ctrl) = Init()()
+def main():
+    (_, _ctrl) = Init()()
 
-
-if __name__ == '__main__':
-
-    @ctrl.app.get('/', response_model=ResRoot)
+    @_ctrl.app.get('/', response_model=ResRoot)
     async def root():
         req = ResRoot(
             deployment=ProjConfig.getDeployment(),
@@ -22,14 +20,18 @@ if __name__ == '__main__':
         return req
 
 
-    @ctrl.app.get('/rota1', response_model=ResPadrao)
+    @_ctrl.app.get('/rota1', response_model=ResPadrao)
     async def rota1():
-        return ctrl.metodoControlador1()
+        return _ctrl.metodoControlador1()
 
 
-    @ctrl.app.post('/rota2', response_model=ResArg)
+    @_ctrl.app.post('/rota2', response_model=ResArg)
     async def rota2(myReq: ReqExemplo):
-        return ctrl.metodoControlador2(myReq.arg)
+        return _ctrl.metodoControlador2(myReq.arg)
+
+    return _, _ctrl
 
 
+if __name__ == '__main__':
+    (_, ctrl) = main()
     uvicorn.run(ctrl.app, host=ctrl.host, port=ctrl.porta)

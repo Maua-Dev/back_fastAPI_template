@@ -2,9 +2,10 @@ from fastapi.testclient import TestClient
 
 from src.controladores.fastapi.http.respostas import ResRoot
 from src.fabricas.controladores.fastapi.fabrica_controlador_fastapi import *
-from src.main import ctrl
+from src.main import main
 
 
+(_, ctrl) = main()
 client = TestClient(ctrl.app)
 
 

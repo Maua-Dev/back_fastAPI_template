@@ -1,2 +1,7 @@
 venv/
-.coverage
+.coverage/
+.idea/
+.vscode/
+**/__pycache__/
+*.pyc
+**/segredos/

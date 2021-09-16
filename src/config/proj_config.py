@@ -8,7 +8,6 @@ class ProjConfig:
 
     @staticmethod
     def getDeployment():
-        print(ProjConfig.PROJ_ROOT_ABS_PATH)
         return ProjConfig.fromJSON(os.path.join(ProjConfig.PROJ_ROOT_ABS_PATH, 'files', 'deployment.json'))
 
     @staticmethod

@@ -9,12 +9,18 @@ Comece ao clonar o repositório do modo que achar mais adequado.
 
 
 ### Criar um ambiente virtual python:
+###### Windows:
     py -m venv venv
+###### Linux:
+    virtualenv -p python3.9 venv
 
-### Ativar ambiente virtual (*windows*)
+### Ativar ambiente virtual:
+###### Windows:
     venv\Scripts\activate
+###### Linux:
+    source venv/bin/activate
 
-### Instalar pacotes necessários
+### Instalar pacotes necessários (ambos OS)
     pip install -r requirements.txt
 
 # Uso:

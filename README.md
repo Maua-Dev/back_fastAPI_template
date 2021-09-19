@@ -43,7 +43,7 @@ Para subir o container:
     pytest
 
 # Autores
-## Grupo Backend (Ordem alfabetica):
+## Grupo Backend (Ordem alfabética):
     Bruna Galastri Guedes
     Bruno Vilardi Bueno
     Felipe Giusti
@@ -53,8 +53,9 @@ Para subir o container:
     Vitor Martin
 
 # Contribuições
-Sendo um projeto fechado para alunos da faculdade Mauá, apenas os alunos podem contribuir para o projeto. 
-Para mudanças, edições e outros, ver a seção de Issues e procurar a atividade designada a você.
+
+Sendo um projeto fechado para alunos da faculdade Mauá, apenas os alunos podem contribuir para o projeto. Para mudanças,
+edições e outros, ver a sessão de Issues e procurar a atividade designada a você.
 
 # Licença
 No momento, não há licença. 

@@ -1,8 +1,8 @@
-from src.config.proj_config import ProjConfig
-from src.config.erros.deployment import *
 from src.config.enums.deployment import *
-from src.repositorios.mock.r_mock import RepoMock
+from src.config.erros.deployment import *
+from src.config.proj_config import ProjConfig
 from src.fabricas.controladores.fastapi.fabrica_controlador_fastapi import FabricaControladorFastapi
+from src.repositorios.mock.r_mock import RepoMock
 
 
 class Init:
@@ -17,7 +17,7 @@ class Init:
         else:
             raise ErroDeployment1()
 
-        # Instanciando tipo de CONTROLER
+        # Instanciando tipo de CONTROLADOR
         if tipo_ctrl == CONTROLADOR.FASTAPI.value:
             ctrl = FabricaControladorFastapi(repo)
         else:

@@ -11,6 +11,7 @@ class CFastapi2:
 
     def __call__(self, arg):
         usecase = UC2(self.repo)
+        # return ResArg()
         return ResArg(
             arg=arg,
             msg=usecase(arg)

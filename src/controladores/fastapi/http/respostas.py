@@ -1,10 +1,10 @@
-from typing import Any
+from typing import Any, Optional
 
 from pydantic import BaseModel
 
 
 class ResPadrao(BaseModel):
-    msg: str
+    msg: str = 'Resposta padrão'
 
 
 class ResRoot(BaseModel):
@@ -13,5 +13,5 @@ class ResRoot(BaseModel):
 
 
 class ResArg(BaseModel):
-    arg: Any
-    msg: str
+    arg: Optional[Any]
+    msg: Optional[str] = 'Resposta padrão'

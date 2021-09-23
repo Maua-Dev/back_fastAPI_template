@@ -7,5 +7,5 @@ class IRepo(ABC):
         pass
 
     @abstractmethod
-    def metodoRepo2(self, arg: object) -> object:
+    def metodoRepo2(self, arg: object) -> (object, None):
         pass

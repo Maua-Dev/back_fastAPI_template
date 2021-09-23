@@ -13,4 +13,5 @@ class RepoMock(IRepo):
     def metodoRepo2(self, arg):
         ret = f'Metodo repo 2 chamado e {arg=}'
         print(ret)
+        # return None
         return ret

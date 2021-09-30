@@ -1,31 +1,14 @@
 import uvicorn
 
-from src.config.proj_config import ProjConfig
-from src.controladores.fastapi.http.requisicoes import *
-from src.controladores.fastapi.http.respostas import *
 from src.init import Init
+
+from src.controladores.fastapi.roteadores.roteadores import roteador
 
 
 def main():
     (_, _ctrl) = Init()()
 
-    @_ctrl.app.get('/', response_model=ResRoot)
-    async def root():
-        req = ResRoot(
-            deployment=ProjConfig.getDeployment(),
-            controlador=ProjConfig.getFastapi()
-        )
-
-        print(req)
-        return req
-
-    @_ctrl.app.get('/rota1', response_model=ResPadrao)
-    async def rota1():
-        return _ctrl.metodoControlador1()
-
-    @_ctrl.app.post('/rota2', response_model=ResArg)
-    async def rota2(myReq: ReqExemplo):
-        return _ctrl.metodoControlador2(myReq.arg)
+    _ctrl.app.include_router(roteador)
 
     return _, _ctrl
 

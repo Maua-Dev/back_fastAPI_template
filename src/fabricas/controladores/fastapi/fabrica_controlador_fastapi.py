@@ -4,6 +4,7 @@ from src.config.proj_config import ProjConfig
 from src.config.enums.fastapi import *
 from src.controladores.fastapi.c_fastapi_1 import CFastapi1
 from src.controladores.fastapi.c_fastapi_2 import CFastapi2
+from src.controladores.fastapi.start import Start
 from src.interfaces.IRepo import IRepo
 
 
@@ -38,3 +39,6 @@ class FabricaControladorFastapi:
 
     def metodoControlador2(self, arg: object) -> object:
         return CFastapi2(self.repo)(arg)
+
+    def start(self):
+        return Start()

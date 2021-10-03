@@ -17,13 +17,13 @@ class Cli():
         # Adiciona os argumentos opcionais
         myParser.add_argument('-repo',
                                type=str,
-                               help='Especifica o repositório que será utilizado. Default=\'mock\'',
-                               default=ProjConfig.getDeployment()[KEY.TIPO_REPOSITORIO.value])
+                               default=ProjConfig.getDeployment()[KEY.TIPO_REPOSITORIO.value],
+                               help='Especifica o repositório que será utilizado. Default=%(default)s')
 
         myParser.add_argument('-ctrl',
                                type=str,
-                               help='Especifica o controlador que será utilizado. Default =\'fastapi\'',
-                               default=ProjConfig.getDeployment()[KEY.TIPO_CONTROLADOR.value])
+                               default=ProjConfig.getDeployment()[KEY.TIPO_CONTROLADOR.value],
+                               help='Especifica o repositório que será utilizado. Default=%(default)s')
         self.parser = myParser
         self.args = myParser.parse_args()
 

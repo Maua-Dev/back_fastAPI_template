@@ -7,10 +7,8 @@ from src.controladores.fastapi.http.respostas import *
 from src.init import Init
 
 
-def main():
-    # Cria a interface de CLI
-    cli = Cli()
-    (_, _ctrl) = Init()(tipo_repo=cli.getRepo(), tipo_ctrl=cli.getCtrl())
+def main(repo:str, ctrl:str):
+    (_, _ctrl) = Init()(tipo_repo=repo,tipo_ctrl=ctrl)
 
     @_ctrl.app.get('/', response_model=ResRoot)
     async def root():
@@ -34,5 +32,6 @@ def main():
 
 
 if __name__ == '__main__':
-    (_, ctrl) = main()
+    cli = Cli()
+    (_, ctrl) = main(repo=cli.getRepo(), ctrl=cli.getCtrl())
     uvicorn.run(ctrl.app, host=ctrl.host, port=ctrl.porta)

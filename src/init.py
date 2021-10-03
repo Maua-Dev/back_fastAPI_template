@@ -8,8 +8,8 @@ from src.fabricas.controladores.fastapi.fabrica_controlador_fastapi import Fabri
 class Init:
     def __call__(
             self,
-            tipo_repo: REPOSITORIO = ProjConfig.getDeployment()[KEY.TIPO_REPOSITORIO.value],
-            tipo_ctrl: CONTROLADOR = ProjConfig.getDeployment()[KEY.TIPO_CONTROLADOR.value]
+            tipo_repo: str = ProjConfig.getDeployment()[KEY.TIPO_REPOSITORIO.value],
+            tipo_ctrl: str = ProjConfig.getDeployment()[KEY.TIPO_CONTROLADOR.value]
     ):
         # Instanciando tipo de REPOSITORIO
         if tipo_repo == REPOSITORIO.MOCK.value:

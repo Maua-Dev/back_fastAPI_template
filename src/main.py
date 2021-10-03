@@ -1,13 +1,14 @@
 import uvicorn
 
+from src.cli import Cli
 from src.config.proj_config import ProjConfig
 from src.controladores.fastapi.http.requisicoes import *
 from src.controladores.fastapi.http.respostas import *
 from src.init import Init
 
 
-def main():
-    (_, _ctrl) = Init()()
+def main(repo:str, ctrl:str):
+    (_, _ctrl) = Init()(tipo_repo=repo,tipo_ctrl=ctrl)
 
     @_ctrl.app.get('/', response_model=ResRoot)
     async def root():
@@ -31,5 +32,7 @@ def main():
 
 
 if __name__ == '__main__':
-    (_, ctrl) = main()
-    uvicorn.run(ctrl.app, host=ctrl.host, port=ctrl.porta)
+    cli = Cli()
+    (_, ctrl) = main(repo=cli.getRepo(), ctrl=cli.getCtrl())
+    ctrl.start()(app=ctrl.app, host=ctrl.host, porta=cli.getPorta())
+

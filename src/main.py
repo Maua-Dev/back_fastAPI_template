@@ -4,6 +4,7 @@ from src.cli import Cli
 from src.config.proj_config import ProjConfig
 from src.controladores.fastapi.http.requisicoes import *
 from src.controladores.fastapi.http.respostas import *
+from src.controladores.fastapi.start import Start
 from src.init import Init
 
 
@@ -34,4 +35,5 @@ def main(repo:str, ctrl:str):
 if __name__ == '__main__':
     cli = Cli()
     (_, ctrl) = main(repo=cli.getRepo(), ctrl=cli.getCtrl())
-    uvicorn.run(ctrl.app, host=ctrl.host, port=ctrl.porta)
+    Start()(app=ctrl.app, host=ctrl.host, porta=cli.getPorta())
+

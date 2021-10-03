@@ -24,6 +24,12 @@ class Cli():
                                type=str,
                                default=ProjConfig.getDeployment()[KEY.TIPO_CONTROLADOR.value],
                                help='Especifica o repositório que será utilizado. Default=%(default)s')
+
+        myParser.add_argument('-porta',
+                              type=int,
+                              default=ProjConfig.getFastapi()['porta'],
+                              help='Especifica a porta que será utilizada. Default=%(default)s')
+
         self.parser = myParser
         self.args = myParser.parse_args()
 
@@ -36,6 +42,9 @@ class Cli():
 
     def getCtrl(self):
         return self.args.ctrl
+
+    def getPorta(self):
+        return self.args.porta
 
 
 

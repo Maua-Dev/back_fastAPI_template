@@ -14,7 +14,7 @@ class Cli():
     def __init__(self):
         myParser = argparse.ArgumentParser(description='Inicializa a execução do mss')
 
-        # Adiciona os argumentos opicionais
+        # Adiciona os argumentos opcionais
         myParser.add_argument('-repo',
                                type=str,
                                help='Especifica o repositório que será utilizado. Default=\'mock\'',

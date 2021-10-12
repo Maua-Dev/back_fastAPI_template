@@ -5,6 +5,7 @@ from src.config.enums.fastapi import *
 from src.controladores.fastapi.c_fastapi_1 import CFastapi1
 from src.controladores.fastapi.c_fastapi_2 import CFastapi2
 from src.interfaces.IRepo import IRepo
+from src.controladores.fastapi.roteadores.roteador import Roteador
 
 
 class FabricaControladorFastapi:
@@ -32,6 +33,7 @@ class FabricaControladorFastapi:
         self.url = f'{self.protocolo}://{self.host}:{self.porta}{self.root}'
 
         self.app = FastAPI()
+        self.app.include_router(Roteador(self))
 
     def metodoControlador1(self) -> object:
         return CFastapi1(self.repo)()

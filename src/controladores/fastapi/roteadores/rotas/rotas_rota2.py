@@ -9,6 +9,6 @@ class RotasRota2(APIRouter):
 
         super().__init__(prefix="/rota2", responses={404: {"description": "Not found"}})
 
-        @self.post("/rota2", response_model=ResArg)
+        @self.post("", response_model=ResArg)
         async def rota2(myReq: ReqExemplo):
             return _ctrl.metodoControlador2(myReq.arg)

@@ -8,6 +8,6 @@ class RotasRota1(APIRouter):
 
         super().__init__(prefix="/rota1", responses={404: {"description": "Not found"}})
 
-        @self.get("/rota1", response_model=ResPadrao)
+        @self.get("", response_model=ResPadrao)
         async def rota1():
             return _ctrl.metodoControlador1()

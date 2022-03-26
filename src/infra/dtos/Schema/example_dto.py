@@ -4,7 +4,7 @@ from src.infra.dtos.db_base import Base
 from sqlalchemy.orm import relationship
 
 class ExampleDTO(Base):
-    __tablename__ = 'Subjects'
+    __tablename__ = 'Example'
 
     id = Column(Integer, primary_key=True)
     culumnNumber1 = Column(String, nullable=False)
@@ -12,14 +12,14 @@ class ExampleDTO(Base):
     relation1 = relationship('NameDTO1',
                             cascade="all, delete",
                             passive_deletes=True,
-                            backref="Subjects")
+                            backref="Example")
     relation2 = relationship('NameDTO2',
                               cascade="all, delete",
                               passive_deletes=True,
-                              backref="Subjects"
+                              backref="Example"
                               )
 
-    def exapleMethod(self) -> Subject:
+    def exapleMethod(self) -> Example:
         return Example(exAttribute1=self.culumnNumber1,
                        exAttribute2=self.culumnNumber2)
 

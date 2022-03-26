@@ -4,7 +4,7 @@ from fastapi.responses import PlainTextResponse
 from src.adapters.controllers.example_controller import ExampleController
 from src.adapters.errors.http_exception import HttpException
 from src.adapters.helpers.http_models import HttpRequest
-from src.main.subjects.module import Modular
+from src.main.example_instanciator.module import Modular
 from src.main.helpers.status import status as st
 
 app = FastAPI()

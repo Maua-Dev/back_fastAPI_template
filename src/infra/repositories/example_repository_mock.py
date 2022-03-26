@@ -1,10 +1,10 @@
 from typing import List
 
-from src.domain.entities.example import Subject
-from src.domain.repositories.subject_repository_interface import ISubjectRepository
+from src.domain.entities.example import Example
+from src.domain.repositories.example_repository_interface import IExampleRepository
 
 
-class ExampleRepositoryMock(ISubjectRepository):
+class ExampleRepositoryMock(IExampleRepository):
     def __init__(self) -> None:
         super().__init__()
         self._repoMock1 = [

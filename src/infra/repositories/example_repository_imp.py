@@ -1,10 +1,10 @@
 from src.domain.entities.example import Example
-from src.domain.repositories.subject_repository_interface import ISubjectRepository
+from src.domain.repositories.example_repository_interface import IExampleRepository
 from src.infra.datasources.datasource_interface import IDataSource
 from typing import List
 
 
-class ExampleRepositoryImp(ISubjectRepository):
+class ExampleRepositoryImp(IExampleRepository):
     def __init__(self, datasource: IDataSource) -> None:
         super().__init__()
         self._datasource = datasource

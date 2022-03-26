@@ -1,4 +1,4 @@
-from src.domain.repositories.subject_repository_interface import ISubjectRepository
+from src.domain.repositories.example_repository_interface import IExampleRepository
 from src.domain.usecases.example_usecase import ExampleUsecase
 from src.adapters.helpers.http_models import *
 from src.adapters.errors.http_exception import *
@@ -6,8 +6,8 @@ from src.domain.errors.errors import *
 
 
 class ExampleController:
-    def __init__(self, subjectRepository: ISubjectRepository) -> None:
-        self._exampleUsecase = ExampleUsecase(subjectRepository)
+    def __init__(self, exampleRepository: IExampleRepository) -> None:
+        self._exampleUsecase = ExampleUsecase(exampleRepository)
 
     async def __call__(self, req: HttpRequest) -> HttpResponse:
         try:

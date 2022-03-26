@@ -1,5 +1,5 @@
 from src.adapters.controllers.example_controller import ExampleController
-from src.main.subjects.module import Module,Modular
+from src.main.example_instanciator.module import Module,Modular
 
 
 class Test_Module:

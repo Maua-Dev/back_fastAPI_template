@@ -1,7 +1,9 @@
 venv/
+.venv/
 .coverage/
 .idea/
 .vscode/
 **/__pycache__/
 *.pyc
 **/segredos/
+.pytest_cache/

@@ -9,15 +9,6 @@ class ExampleDTO(Base):
     id = Column(Integer, primary_key=True)
     culumnNumber1 = Column(String, nullable=False)
     culumnNumber2 = Column(Integer, nullable=False)
-    relation1 = relationship('NameDTO1',
-                            cascade="all, delete",
-                            passive_deletes=True,
-                            backref="Example")
-    relation2 = relationship('NameDTO2',
-                              cascade="all, delete",
-                              passive_deletes=True,
-                              backref="Example"
-                              )
 
     def exapleMethod(self) -> Example:
         return Example(exAttribute1=self.culumnNumber1,

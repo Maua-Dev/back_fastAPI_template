@@ -9,13 +9,13 @@ class ExampleRepositoryMock(IExampleRepository):
         super().__init__()
         self._repoMock1 = [
             {
-                "column1": 9.2
-                "column2": "XYZ"
+                "column1": 9.2,
+                "column2": "XYZ",
                 "column3": False
             },
             {
-                "column1": 9.2
-                "column2": "XYZ"
+                "column1": 9.2,
+                "column2": "XYZ",
                 "column3": False
             }
         ]

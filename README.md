@@ -1,5 +1,5 @@
 # Template para Fast API
-[![codecov](https://codecov.io/gh/Maua-Dev/back_fastAPI_template/branch/main/graph/badge.svg?token=M16VBNGBR3)](https://codecov.io/gh/Maua-Dev/back_fastAPI_template)
+[![codecov](https://codecov.io/gh/Maua-Dev/mss_materias/branch/main/graph/badge.svg?token=NIRZLES7VB)](https://codecov.io/gh/Maua-Dev/mss_materias)
 
 Template de MSS para Fast API.
 
@@ -35,9 +35,26 @@ Para subir o container:
 
     docker-compose up
 
+### Subir um container PostgreSQL
+##### 1. Obter a imagem do Postgres
+    docker pull postgres
+##### 2. Criar um container
+    docker run --name devmaua_postgres -p 5432:5432 -e POSTGRES_PASSWORD=devmaua -d postgres
+##### 3. Conectar ao postgres
+    docker exec -it devmaua_postgres psql -U postgres -W
+    (senha = devmaua)
+##### 4. Criar o database "Devmaua"
+    create database "Devmaua";
+##### 5. Fechar o cmd
+##### 6. Criar um .bat com o comando:
+    docker exec -it devmaua_postgres psql -U postgres -W -d Devmaua
+Ao executar esse .bat você se conectará automaticamente ao banco (basta inserir a senha "devmaua").
+Obs: o nome do container "devmaua_postgres" pode ser mudado para o que preferir.
+
+
 
 ### Iniciar server
-    uvicorn src.main:app --reload
+    uvicorn src.main.main:app --reload
 
 ### Rodar testes
     pytest
